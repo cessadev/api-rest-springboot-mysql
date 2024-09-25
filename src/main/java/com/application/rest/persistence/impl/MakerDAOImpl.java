@@ -12,8 +12,11 @@ import java.util.Optional;
 @Component
 public class MakerDAOImpl implements IMakerDAO {
 
-    @Autowired
-    private MakerRepository makerRepository;
+    private final MakerRepository makerRepository;
+
+    public MakerDAOImpl(MakerRepository makerRepository) {
+        this.makerRepository = makerRepository;
+    }
 
     @Override
     public List<Maker> findAll() {

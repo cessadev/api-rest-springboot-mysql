@@ -2,11 +2,11 @@ version: '3.8'
 
 services:
   db-demo:
-    container_name: db-demo-angular
+    container_name: db-demo
     image: postgres:16-alpine3.19
     restart: unless-stopped
     environment:
-      POSTGRES_DB: db_demo_angular
+      POSTGRES_DB: db_demo
       POSTGRES_USER: cessadev
       POSTGRES_PASSWORD: password
     ports:

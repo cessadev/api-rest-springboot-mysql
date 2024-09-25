@@ -4,7 +4,6 @@ import com.application.rest.controllers.dto.ProductDTO;
 import com.application.rest.entities.Maker;
 import com.application.rest.entities.Product;
 import com.application.rest.service.IProductService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,8 +18,11 @@ import java.util.Optional;
 @RequestMapping("/api/product")
 public class ProductController {
 
-    @Autowired
-    private IProductService productService;
+    private final IProductService productService;
+
+    public ProductController(IProductService productService) {
+        this.productService = productService;
+    }
 
     @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/find/{id}")
